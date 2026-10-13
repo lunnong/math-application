@@ -16,8 +16,7 @@ public class MathApp {
 
         // Question 3:
         double radius  = 7.25;
-        double pi = 3.141592653;
-        double area  = Math.pow(radius, 2) * pi;
+        double area  = Math.pow(radius, 2) * Math.PI;
         System.out.println("The area of a circle  with radius " + radius  + " is " + area);
 
         // Question 4:
@@ -48,5 +47,59 @@ public class MathApp {
         int numMilliseconds = numSeconds * 1000;
         System.out.println("The number of minutes in " + numDays +  " days is " + numMinutes);
         System.out.println("The number of milliseconds in " + numDays + " days is " + numMilliseconds);
+
+        // Stretch Challenges
+
+        System.out.println();
+        System.out.println("Stretch challenges:");
+
+        // 1. The Time Machine
+        int hours = 22;
+        int minutes = 45;
+        int minutesToAdd = 150;
+        System.out.println("The current time is " + hours + ":" + minutes);
+
+        minutes = minutes + minutesToAdd;
+        int hoursToAdd = minutes / 60;
+        minutes = minutes % 60;
+        hours = hours + hoursToAdd;
+        hours = hours % 24;
+        System.out.println("After " + minutesToAdd + " minutes, it is now " + hours + ":" + minutes);
+
+        // 2. The Movie Marathon
+        int movieOneMinutes = 125;
+        int movieTwoMinutes = 98;
+        int movieThreeMinutes = 142;
+
+        int totalMinutes = movieOneMinutes + movieTwoMinutes + movieThreeMinutes;
+        int hoursQuestionTwo = totalMinutes / 60;
+        int minutesQuestionTwo  = totalMinutes % 60;
+
+        System.out.println("After watching three movies lasting " + movieOneMinutes + " minutes, " + movieTwoMinutes + " minutes, and " + movieThreeMinutes +
+                           " minutes, I will be watching movies for " + hoursQuestionTwo + " hours and " +  minutesQuestionTwo + " minutes.");
+
+        int currentHour = 19;
+        int currentMinute = 30;
+        System.out.println("The current time is " + currentHour + ":" + currentMinute);
+
+        currentMinute = currentMinute + minutesQuestionTwo;
+        hoursQuestionTwo += (currentMinute / 60);
+        currentMinute = currentMinute % 60;
+        currentHour  = (currentHour + hoursQuestionTwo) % 24;
+        System.out.println("After the movie marathon, the time will be " + currentHour + ":" + currentMinute);
+
+        // 3. The Pizza Party
+        int people = 23;
+        int slicesPerPerson = 3;
+        int slicesPerPizza = 8;
+
+        int totalSlices = people * slicesPerPerson;
+        int pizzas = (totalSlices + slicesPerPizza - 1) / slicesPerPizza;
+        int leftoverSlices = pizzas * slicesPerPizza - totalSlices;
+
+        System.out.println("Total slices needed: " + totalSlices);
+        System.out.println("Pizzas to order: " + pizzas);
+        System.out.println("Slices left over: " + leftoverSlices);
+
     }
 }
